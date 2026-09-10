@@ -1,0 +1,12 @@
+{
+  "topic": "示例主题：请替换为你的心理学研究主题",
+  "research_question": "示例研究问题：请替换为你希望检索和人工审查的问题。",
+  "publication_year_from": 2020,
+  "queries": [
+    {
+      "id": "replace_me",
+      "query": "replace this example with your psychology literature query",
+      "purpose": "示例检索式；编辑后通过 pea search --config 使用。"
+    }
+  ]
+}

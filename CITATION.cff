@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use or discuss Psychology Evidence Agent, please cite the project and preserve the author attribution."
+title: "Psychology Evidence Agent"
+type: software
+version: "0.1.0"
+date-released: "2026-09-10"
+authors:
+  - family-names: Chen
+    given-names: Eason
+    alias: easonchen411256-wq
+    affiliation: Independent developer and researcher
+repository-code: "https://github.com/easonchen411256-wq/psychology-evidence-agent"
+license: "LicenseRef-Proprietary"

@@ -1,0 +1,17 @@
+{
+  "topic": "示例主题：多角度心理学文献检索",
+  "research_question": "示例研究问题：请将多个检索角度替换为你的实际研究问题。",
+  "publication_year_from": 2015,
+  "queries": [
+    {
+      "id": "primary_concept",
+      "query": "replace this primary psychology concept",
+      "purpose": "示例：核心概念检索。"
+    },
+    {
+      "id": "related_measure",
+      "query": "replace this related psychology measure",
+      "purpose": "示例：相关指标或结果检索。"
+    }
+  ]
+}

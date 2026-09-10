@@ -1,0 +1,130 @@
+{
+  "$comment": "GENERATED FILE — DO NOT EDIT MANUALLY. Run `pea schemas export`.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "evidence_gaps": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Gaps",
+      "type": "array"
+    },
+    "evidence_scope": {
+      "title": "Evidence Scope",
+      "type": "string"
+    },
+    "human_review_items": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Human Review Items",
+      "type": "array"
+    },
+    "research_question": {
+      "title": "Research Question",
+      "type": "string"
+    },
+    "sections": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "caveat": {
+            "title": "Caveat",
+            "type": "string"
+          },
+          "claims": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "claim": {
+                  "title": "Claim",
+                  "type": "string"
+                },
+                "evidence": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "evidence_card_file": {
+                        "title": "Evidence Card File",
+                        "type": "string"
+                      },
+                      "evidence_location": {
+                        "title": "Evidence Location",
+                        "type": "string"
+                      },
+                      "finding": {
+                        "title": "Finding",
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "evidence_card_file",
+                      "finding",
+                      "evidence_location"
+                    ],
+                    "title": "ClaimEvidence",
+                    "type": "object"
+                  },
+                  "minItems": 1,
+                  "title": "Evidence",
+                  "type": "array"
+                }
+              },
+              "required": [
+                "claim",
+                "evidence"
+              ],
+              "title": "DraftClaim",
+              "type": "object"
+            },
+            "title": "Claims",
+            "type": "array"
+          },
+          "heading": {
+            "title": "Heading",
+            "type": "string"
+          },
+          "paragraph": {
+            "title": "Paragraph",
+            "type": "string"
+          },
+          "supporting_card_files": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Supporting Card Files",
+            "type": "array"
+          }
+        },
+        "required": [
+          "heading",
+          "paragraph",
+          "supporting_card_files",
+          "claims",
+          "caveat"
+        ],
+        "title": "ReviewSection",
+        "type": "object"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Sections",
+      "type": "array"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "research_question",
+    "evidence_scope",
+    "sections",
+    "evidence_gaps",
+    "human_review_items"
+  ],
+  "title": "Psychology Evidence Review Draft",
+  "type": "object"
+}

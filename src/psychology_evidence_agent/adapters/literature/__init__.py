@@ -1,0 +1,1 @@
+"""Literature metadata adapters."""

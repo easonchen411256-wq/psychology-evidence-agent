@@ -1,0 +1,12 @@
+[
+  {
+    "id": "cross_sectional_association",
+    "description": "横断面研究：测试 Agent 不将相关关系表述为因果。",
+    "expected_rule": "supported_claims 不应出现导致、改善或因果表述。"
+  },
+  {
+    "id": "abstract_only",
+    "description": "仅提供摘要：测试 Agent 标记材料局限。",
+    "expected_rule": "material_completeness 应为 partial，未报告信息不得补造。"
+  }
+]

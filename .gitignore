@@ -1,0 +1,31 @@
+# Secrets
+.env
+
+# Local research materials and generated records
+data/raw/*
+data/processed/*
+logs/*
+
+# Keep directory placeholders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!logs/.gitkeep
+
+# Common local artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+build/
+dist/
+.wheel-smoke/
+.playwright-cli/
+.venv/
+venv/
+node_modules/
+.DS_Store

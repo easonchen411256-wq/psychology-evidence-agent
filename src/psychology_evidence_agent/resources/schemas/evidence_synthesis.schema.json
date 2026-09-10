@@ -1,0 +1,160 @@
+{
+  "$comment": "GENERATED FILE — DO NOT EDIT MANUALLY. Run `pea schemas export`.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "cards": {
+      "items": {
+        "additionalProperties": false,
+        "description": "Persisted projection of an evidence card, retaining its source data.",
+        "properties": {
+          "claim_boundaries": {
+            "additionalProperties": true,
+            "title": "Claim Boundaries",
+            "type": "object"
+          },
+          "evidence_role_candidate": {
+            "enum": [
+              "direct_candidate",
+              "adjacent_candidate",
+              "background_candidate",
+              "review_required"
+            ],
+            "title": "EvidenceRoleCandidate",
+            "type": "string"
+          },
+          "file": {
+            "title": "File",
+            "type": "string"
+          },
+          "findings": {
+            "items": {},
+            "title": "Findings",
+            "type": "array"
+          },
+          "human_review_items": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Human Review Items",
+            "type": "array"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Limitations",
+            "type": "array"
+          },
+          "material_completeness": {
+            "enum": [
+              "complete",
+              "partial",
+              "insufficient"
+            ],
+            "title": "MaterialCompleteness",
+            "type": "string"
+          },
+          "signals": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Signals",
+            "type": "object"
+          },
+          "source": {
+            "additionalProperties": true,
+            "title": "Source",
+            "type": "object"
+          },
+          "study": {
+            "additionalProperties": true,
+            "title": "Study",
+            "type": "object"
+          }
+        },
+        "required": [
+          "file",
+          "source",
+          "material_completeness",
+          "study",
+          "signals",
+          "evidence_role_candidate",
+          "findings",
+          "limitations",
+          "claim_boundaries",
+          "human_review_items"
+        ],
+        "title": "SynthesisCard",
+        "type": "object"
+      },
+      "title": "Cards",
+      "type": "array"
+    },
+    "skipped_files": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "file": {
+            "title": "File",
+            "type": "string"
+          },
+          "reason": {
+            "title": "Reason",
+            "type": "string"
+          }
+        },
+        "required": [
+          "file",
+          "reason"
+        ],
+        "title": "SkippedFile",
+        "type": "object"
+      },
+      "title": "Skipped Files",
+      "type": "array"
+    },
+    "summary": {
+      "additionalProperties": false,
+      "properties": {
+        "included_count": {
+          "minimum": 0,
+          "title": "Included Count",
+          "type": "integer"
+        },
+        "input_count": {
+          "minimum": 0,
+          "title": "Input Count",
+          "type": "integer"
+        },
+        "role_counts": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Role Counts",
+          "type": "object"
+        },
+        "skipped_count": {
+          "minimum": 0,
+          "title": "Skipped Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "input_count",
+        "included_count",
+        "skipped_count",
+        "role_counts"
+      ],
+      "title": "SynthesisSummary",
+      "type": "object"
+    }
+  },
+  "required": [
+    "summary",
+    "cards",
+    "skipped_files"
+  ],
+  "title": "Psychology Evidence Synthesis",
+  "type": "object"
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "assistant_message": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000
+    },
+    "candidate_brief": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "research_question": {"type": "string", "minLength": 1, "maxLength": 4000},
+        "population": {"type": "string", "maxLength": 500},
+        "intervention_or_exposure": {"type": "string", "maxLength": 500},
+        "comparison": {"type": "string", "maxLength": 500},
+        "outcomes": {"type": "array", "items": {"type": "string"}, "maxItems": 20},
+        "inclusion_criteria": {"type": "array", "items": {"type": "string"}, "maxItems": 20},
+        "exclusion_criteria": {"type": "array", "items": {"type": "string"}, "maxItems": 20},
+        "languages": {"type": "array", "items": {"type": "string"}, "maxItems": 10},
+        "study_types": {"type": "array", "items": {"type": "string"}, "maxItems": 20},
+        "year_from": {"anyOf": [{"type": "integer", "minimum": 1800, "maximum": 2100}, {"type": "null"}]},
+        "year_to": {"anyOf": [{"type": "integer", "minimum": 1800, "maximum": 2100}, {"type": "null"}]}
+      },
+      "required": [
+        "research_question",
+        "population",
+        "intervention_or_exposure",
+        "comparison",
+        "outcomes",
+        "inclusion_criteria",
+        "exclusion_criteria",
+        "languages",
+        "study_types",
+        "year_from",
+        "year_to"
+      ]
+    },
+    "missing_information": {
+      "type": "array",
+      "items": {"type": "string"},
+      "maxItems": 10
+    },
+    "ready_to_run": {"type": "boolean"},
+    "search_preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {"type": "string", "enum": ["automatic", "manual"]},
+        "manual_query": {"type": "string", "maxLength": 500},
+        "candidate_limit": {"type": "integer", "minimum": 1, "maximum": 100}
+      },
+      "required": ["mode", "manual_query", "candidate_limit"]
+    }
+  },
+  "required": ["assistant_message", "candidate_brief", "missing_information", "ready_to_run", "search_preferences"]
+}

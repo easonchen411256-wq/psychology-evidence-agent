@@ -1,0 +1,178 @@
+{
+  "$comment": "GENERATED FILE — DO NOT EDIT MANUALLY. Run `pea schemas export`.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "A bounded, inspectable plan proposed by a planner.",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "goal_id": {
+      "minLength": 1,
+      "title": "Goal Id",
+      "type": "string"
+    },
+    "plan_id": {
+      "pattern": "^plan_[0-9a-f]{32}$",
+      "title": "Plan Id",
+      "type": "string"
+    },
+    "rationale": {
+      "default": "",
+      "maxLength": 1000,
+      "title": "Rationale",
+      "type": "string"
+    },
+    "revision": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "steps": {
+      "items": {
+        "additionalProperties": false,
+        "description": "One planned call; status is persisted to make interruption recoverable.",
+        "properties": {
+          "arguments": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "value": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "value"
+              ],
+              "type": "object"
+            },
+            "title": "Arguments",
+            "type": "array"
+          },
+          "attempt_count": {
+            "default": 0,
+            "minimum": 0,
+            "title": "Attempt Count",
+            "type": "integer"
+          },
+          "depends_on": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 20,
+            "title": "Depends On",
+            "type": "array"
+          },
+          "max_attempts": {
+            "default": 1,
+            "maximum": 5,
+            "minimum": 1,
+            "title": "Max Attempts",
+            "type": "integer"
+          },
+          "requires_human_approval": {
+            "default": false,
+            "title": "Requires Human Approval",
+            "type": "boolean"
+          },
+          "result_summary": {
+            "default": "",
+            "maxLength": 1000,
+            "title": "Result Summary",
+            "type": "string"
+          },
+          "stage_complete": {
+            "default": true,
+            "title": "Stage Complete",
+            "type": "boolean"
+          },
+          "status": {
+            "default": "pending",
+            "enum": [
+              "pending",
+              "running",
+              "waiting",
+              "completed",
+              "failed"
+            ],
+            "title": "PlanStepStatus",
+            "type": "string"
+          },
+          "step_id": {
+            "pattern": "^step_[0-9A-Za-z_.-]{1,79}$",
+            "title": "Step Id",
+            "type": "string"
+          },
+          "success_criteria": {
+            "maxLength": 400,
+            "minLength": 1,
+            "title": "Success Criteria",
+            "type": "string"
+          },
+          "tool_name": {
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Tool Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "step_id",
+          "tool_name",
+          "arguments",
+          "depends_on",
+          "success_criteria",
+          "requires_human_approval",
+          "max_attempts",
+          "status",
+          "attempt_count",
+          "result_summary",
+          "stage_complete"
+        ],
+        "title": "PlanStep",
+        "type": "object"
+      },
+      "maxItems": 20,
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    }
+  },
+  "required": [
+    "plan_id",
+    "goal_id",
+    "revision",
+    "steps",
+    "rationale",
+    "created_at"
+  ],
+  "title": "AgentPlan",
+  "type": "object"
+}

@@ -1,0 +1,38 @@
+{
+  "source": {
+    "title": "Practice study: perceived stress and sleep quality",
+    "authors": ["Example Author"],
+    "year": "2026",
+    "journal": "Example Journal",
+    "doi_or_url": "未报告"
+  },
+  "material_completeness": "partial",
+  "study": {
+    "research_question": "Whether perceived stress is associated with sleep quality among university students.",
+    "design": "cross-sectional",
+    "sample": "120 university students",
+    "measures": ["perceived stress", "sleep quality"],
+    "analysis": "未报告"
+  },
+  "findings": [
+    {
+      "finding": "Higher perceived stress was associated with poorer sleep quality.",
+      "inference_strength": "association",
+      "evidence_location": "简化示例的结果段"
+    }
+  ],
+  "limitations": [
+    "The simplified excerpt does not provide statistical details."
+  ],
+  "claim_boundaries": {
+    "supported_claims": [
+      "Perceived stress was associated with sleep quality in this sample."
+    ],
+    "unsupported_claims": [
+      "Reducing perceived stress improves sleep quality."
+    ]
+  },
+  "human_review_items": [
+    "Check the full text for measurements, covariates, and statistical results."
+  ]
+}

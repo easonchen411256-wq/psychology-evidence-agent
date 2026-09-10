@@ -1,0 +1,14 @@
+Copyright (c) 2026 Eason Chen (easonchen411256-wq)
+
+All rights reserved.
+
+This repository and its source code are provided for private evaluation and
+research use only. No permission is granted to copy, modify, publish,
+redistribute, sublicense, or use the code for commercial purposes without
+prior written permission from the copyright holder.
+
+The project metadata identifies this license as `LicenseRef-Proprietary`.
+The original concept, architecture and implementation of Psychology Evidence
+Agent were created and are owned by Eason Chen (easonchen411256-wq).
+Third-party dependencies remain under their own licenses. See their respective
+package metadata and documentation for those terms.

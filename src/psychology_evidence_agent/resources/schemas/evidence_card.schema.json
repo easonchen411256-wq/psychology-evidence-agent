@@ -1,0 +1,176 @@
+{
+  "$comment": "GENERATED FILE — DO NOT EDIT MANUALLY. Run `pea schemas export`.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Strict, structured evidence extracted from one supplied paper material.",
+  "properties": {
+    "claim_boundaries": {
+      "additionalProperties": false,
+      "properties": {
+        "supported_claims": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Supported Claims",
+          "type": "array"
+        },
+        "unsupported_claims": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unsupported Claims",
+          "type": "array"
+        }
+      },
+      "required": [
+        "supported_claims",
+        "unsupported_claims"
+      ],
+      "title": "ClaimBoundaries",
+      "type": "object"
+    },
+    "findings": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_location": {
+            "title": "Evidence Location",
+            "type": "string"
+          },
+          "finding": {
+            "title": "Finding",
+            "type": "string"
+          },
+          "inference_strength": {
+            "enum": [
+              "association",
+              "prediction",
+              "causal",
+              "intervention_effect",
+              "uncertain"
+            ],
+            "title": "InferenceStrength",
+            "type": "string"
+          }
+        },
+        "required": [
+          "finding",
+          "inference_strength",
+          "evidence_location"
+        ],
+        "title": "EvidenceFinding",
+        "type": "object"
+      },
+      "title": "Findings",
+      "type": "array"
+    },
+    "human_review_items": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Human Review Items",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "material_completeness": {
+      "enum": [
+        "complete",
+        "partial",
+        "insufficient"
+      ],
+      "title": "MaterialCompleteness",
+      "type": "string"
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "authors": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Authors",
+          "type": "array"
+        },
+        "doi_or_url": {
+          "title": "Doi Or Url",
+          "type": "string"
+        },
+        "journal": {
+          "title": "Journal",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "year": {
+          "title": "Year",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "authors",
+        "year",
+        "journal",
+        "doi_or_url"
+      ],
+      "title": "EvidenceSource",
+      "type": "object"
+    },
+    "study": {
+      "additionalProperties": false,
+      "properties": {
+        "analysis": {
+          "title": "Analysis",
+          "type": "string"
+        },
+        "design": {
+          "title": "Design",
+          "type": "string"
+        },
+        "measures": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Measures",
+          "type": "array"
+        },
+        "research_question": {
+          "title": "Research Question",
+          "type": "string"
+        },
+        "sample": {
+          "title": "Sample",
+          "type": "string"
+        }
+      },
+      "required": [
+        "research_question",
+        "design",
+        "sample",
+        "measures",
+        "analysis"
+      ],
+      "title": "StudyMetadata",
+      "type": "object"
+    }
+  },
+  "required": [
+    "source",
+    "material_completeness",
+    "study",
+    "findings",
+    "limitations",
+    "claim_boundaries",
+    "human_review_items"
+  ],
+  "title": "Psychology Evidence Card",
+  "type": "object"
+}

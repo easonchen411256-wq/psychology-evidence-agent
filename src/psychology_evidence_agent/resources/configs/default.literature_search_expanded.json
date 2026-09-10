@@ -1,0 +1,19 @@
+{
+  "topic": "Psychological interventions for fear of falling in older adults: heart rate/HRV and gait as monitoring indicators",
+  "research_question": "在老年人跌倒恐惧相关的心理干预中，心率及心率变异性（HRV）和步态指标如何被用于监测干预过程与评估效果？这些指标分别可能反映哪些情绪、认知和运动变化？",
+  "publication_year_from": 2000,
+  "queries": [
+    {"id": "intervention_fof", "query": "fear of falling psychological intervention older adults", "purpose": "心理干预与跌倒恐惧的直接研究"},
+    {"id": "cbt_fof", "query": "cognitive behavioral therapy fear of falling older adults", "purpose": "CBT、风险认知与跌倒恐惧"},
+    {"id": "mindfulness_fof", "query": "mindfulness intervention fear of falling older adults", "purpose": "正念与情绪调节相关干预"},
+    {"id": "gait_intervention", "query": "fear of falling intervention gait outcomes older adults", "purpose": "干预中步态结局"},
+    {"id": "gait_variability", "query": "fear of falling intervention gait variability older adults", "purpose": "步态变异性和稳定性"},
+    {"id": "dual_task_gait", "query": "fear of falling intervention dual task gait older adults", "purpose": "双任务步态与认知-运动变化"},
+    {"id": "fall_prevention_gait", "query": "fall prevention program fear of falling gait older adults randomized", "purpose": "跌倒预防项目的步态与恐惧结局"},
+    {"id": "hrv_fof", "query": "fear of falling heart rate variability older adults", "purpose": "HRV与跌倒恐惧的直接或相邻证据"},
+    {"id": "hrv_psychological", "query": "psychological intervention heart rate variability older adults", "purpose": "心理干预中的HRV或自主神经监测"},
+    {"id": "anxiety_hrv_fall", "query": "anxiety intervention heart rate variability fall risk older adults", "purpose": "焦虑调节、HRV与跌倒风险"},
+    {"id": "cbt_hrv", "query": "cognitive behavioral therapy heart rate variability older adults", "purpose": "CBT中的自主神经监测"},
+    {"id": "multicomponent_monitoring", "query": "multicomponent fall prevention gait heart rate older adults", "purpose": "多组分跌倒预防中的步态和心率监测"}
+  ]
+}

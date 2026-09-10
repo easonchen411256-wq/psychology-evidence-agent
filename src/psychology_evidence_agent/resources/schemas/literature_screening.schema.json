@@ -1,0 +1,63 @@
+{
+  "$comment": "GENERATED FILE — DO NOT EDIT MANUALLY. Run `pea schemas export`.",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "screened_papers": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence_level": {
+            "enum": [
+              "direct",
+              "adjacent",
+              "background",
+              "exclude"
+            ],
+            "title": "ScreeningEvidenceLevel",
+            "type": "string"
+          },
+          "human_review_note": {
+            "title": "Human Review Note",
+            "type": "string"
+          },
+          "paper_id": {
+            "title": "Paper Id",
+            "type": "string"
+          },
+          "rationale": {
+            "title": "Rationale",
+            "type": "string"
+          },
+          "relevance_score": {
+            "maximum": 10,
+            "minimum": 1,
+            "title": "Relevance Score",
+            "type": "number"
+          },
+          "subtopic": {
+            "title": "Subtopic",
+            "type": "string"
+          }
+        },
+        "required": [
+          "paper_id",
+          "relevance_score",
+          "evidence_level",
+          "subtopic",
+          "rationale",
+          "human_review_note"
+        ],
+        "title": "ScreeningDecision",
+        "type": "object"
+      },
+      "title": "Screened Papers",
+      "type": "array"
+    }
+  },
+  "required": [
+    "screened_papers"
+  ],
+  "title": "Literature Screening Result",
+  "type": "object"
+}
